@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Expense Tracker 💰</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <h1>💸 My Expense Tracker</h1>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Balance Section -->
+    <section class="balance">
+      <h2>Balance: ₹<span id="balance">0</span></h2>
+      <div class="summary">
+        <div class="card income">
+          <h3>Income</h3>
+          <p>₹<span id="income">0</span></p>
+        </div>
+        <div class="card expense">
+          <h3>Expense</h3>
+          <p>₹<span id="expense">0</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Transaction Form -->
+    <section class="form-section">
+      <h2>Add Transaction</h2>
+      <form id="expense-form">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="number" id="amount" placeholder="Amount (₹)" required>
+
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+
+        <select id="category">
+          <option value="Food">🍔 Food</option>
+          <option value="Travel">🚗 Travel</option>
+          <option value="Shopping">🛍 Shopping</option>
+          <option value="Bills">📄 Bills</option>
+          <option value="Others">✨ Others</option>
+        </select>
+
+        <input type="date" id="date" required>
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <!-- Filter & Clear -->
+    <section class="filter">
+      <label>Filter by Category:</label>
+      <select id="filter-category">
+        <option value="All">All</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+        <option value="Others">Others</option>
+      </select>
+      <button id="clear-all">Clear All</button>
+    </section>
+
+    <!-- Transaction History -->
+    <section class="history">
+      <h2>Transaction History</h2>
+      <ul id="expense-list"></ul>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="chart-section">
+      <h2>Expense Breakdown</h2>
+      <canvas id="expenseChart"></canvas>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 My Expense Tracker | Built with HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
